@@ -3,19 +3,22 @@ import ContactForm from '../ContactForm/ContactForm';
 import Filter from '../Filter/Filter';
 import ContactList from '../ContactList/ContactList';
 import styles from './app.module.css';
+import { useDispatch } from 'react-redux';
+import { fetchContacts } from 'redux/operations';
+import { useEffect } from 'react';
+import { Navbar } from 'components/Navbar/Navbar';
+import { Route, Routes } from 'react-router-dom';
+import { Home } from 'components/Pages/Home/Home';
 
 function App() {
+  const dispatch = useDispatch()
+  useEffect(()=>{
+dispatch(fetchContacts())
+  },[dispatch])
   return (
-    <div className={styles.wrapper}>
-        <div className={styles.container}>
-          {/* <img src="../Image/backgroun.jpg" alt="sad" /> */}
-          <h1>Phonebook</h1>
-          <ContactForm />
-          <h2>Contacts</h2>
-          <Filter />
-          <ContactList />
-        </div>
-    </div>
+   <Routes>
+    <Route path='/' element={<Home/>}/>
+   </Routes>
   );
 }
 

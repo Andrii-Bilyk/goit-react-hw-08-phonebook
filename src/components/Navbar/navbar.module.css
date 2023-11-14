@@ -1,0 +1,42 @@
+.wrapper_nav {
+    margin: 0 auto;
+    display: flex;
+      background-color: rgba(35, 165, 137, 0.7);
+    border-radius: 12px;
+    padding: 20px 10px;
+    margin-bottom: 25px;
+  }
+  
+  .nav_menu {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .div {
+    display: flex;
+    gap: 25px;
+  }
+  
+  .link {
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  .name {
+    font-size: 20px;
+    color: rgb(227, 222, 222);
+  }
+  
+  .button {
+    cursor: pointer;
+    background-color: #3498db;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+    margin-left: 15px;
+    font-size: 15px;
+  }
+  
