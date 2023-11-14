@@ -9,8 +9,7 @@ export const Home = () => {
   return (
     <div className={styles.wrapper}>
         <div className={styles.container}>
-          <Navbar/>
-          {/* <img src="../Image/backgroun.jpg" alt="sad" /> */}
+      
           <h1>Phonebook</h1>
           <ContactForm />
           <h2>Contacts</h2>

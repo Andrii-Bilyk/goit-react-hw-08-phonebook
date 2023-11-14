@@ -9,6 +9,8 @@ import { useEffect } from 'react';
 import { Navbar } from 'components/Navbar/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import { Home } from 'components/Pages/Home/Home';
+import { Login } from 'components/Pages/Login/Login';
+import { Register } from 'components/Pages/Registration/Registration';
 
 function App() {
   const dispatch = useDispatch()
@@ -16,9 +18,15 @@ function App() {
 dispatch(fetchContacts())
   },[dispatch])
   return (
-   <Routes>
+    <>
+          <Navbar/>
+          <Routes>
     <Route path='/' element={<Home/>}/>
+    <Route path='/login' element={<Login/>}/>
+    <Route path='/register' element={<Register/>}/>
    </Routes>
+    </>
+   
   );
 }
 
