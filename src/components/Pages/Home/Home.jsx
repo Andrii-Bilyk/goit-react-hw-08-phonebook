@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles  from './home.module.css';
-import { Navbar } from 'components/Navbar/Navbar';
 import ContactForm from 'components/ContactForm/ContactForm';
 import Filter from 'components/Filter/Filter';
 import ContactList from 'components/ContactList/ContactList';
+import { useDispatch } from 'react-redux';
+import { fetchContacts } from 'redux/operations';
 
 export const Home = () => {
+  const dispatch = useDispatch()
+  useEffect(()=>{
+dispatch(fetchContacts())},[dispatch])
   return (
     <div className={styles.wrapper}>
         <div className={styles.container}>

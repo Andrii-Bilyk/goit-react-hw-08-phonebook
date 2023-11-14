@@ -12,7 +12,7 @@ export const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const logOut = () => {
+  const handleLogOut = () => {
     dispatch(logOut());
     navigate('/');
   };
@@ -23,11 +23,7 @@ export const Navbar = () => {
           <NavLink to="/" className={styles.link}>
             Home
           </NavLink>
-          {isLoggedIn && (
-            <NavLink to="/contacts" className={styles.link}>
-              Contacts
-            </NavLink>
-          )}
+        
         </div>
 
         {!isLoggedIn ? (
@@ -42,7 +38,7 @@ export const Navbar = () => {
         ) : (
           <div className={styles.div}>
             <span className={styles.name}>{name}</span>
-            <button className={styles.button} onClick={logOut}>
+            <button className={styles.button} onClick={handleLogOut}>
               Exit
             </button>
           </div>
